@@ -47,4 +47,30 @@ public class Cuenta {
     public void setValorInicial(double valorInicial) {
         this.valorInicial = valorInicial;
     }
+
+    public void consignar(double monto){
+        this.saldoActual += monto;
+    }
+
+    public void retirar(double monto){
+        if(this.saldoActual-monto < this.saldoMinimo){
+            System.out.println("Saldo insuficiente");
+            System.out.println("El valor retirado es : "+(this.saldoActual-this.saldoMinimo));
+            this.saldoActual = this.saldoMinimo;
+        }else{
+            System.out.println("El valor retirado es: "+monto);
+            this.saldoActual -= monto;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Cuenta{" +
+                "numero='" + numero + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", saldoActual=" + saldoActual +
+                ", saldoMinimo=" + saldoMinimo +
+                ", valorInicial=" + valorInicial +
+                '}';
+    }
 }
