@@ -13,7 +13,7 @@ public class Cuadrado extends Figura{
 
     @Override
     public String toString() {
-        return "Cuadrado [lado=" + lado + " color= " + getColor() +"]";
+        return "Cuadrado [lado=" + lado + " , color= " + getColor() +"]";
     }
     
     
